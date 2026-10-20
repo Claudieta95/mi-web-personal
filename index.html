@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171513">
+
+    <title>Tras el Marco | Arte, historias y cultura</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body class="pagina-inicio" id="inicio">
+
+    <header class="cabecera">
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="index.html" class="logo">TRAS EL MARCO</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" class="activo">Inicio</a></li>
+                <li><a href="pages/explora.html">Explora</a></li>
+                <li><a href="pages/articulos.html">Artículos</a></li>
+                <li><a href="pages/exposiciones.html">Exposiciones</a></li>
+                <li><a href="pages/podcast.html">Podcast</a></li>
+                <li><a href="pages/youtube.html">YouTube</a></li>
+            </ul>
+
+            <div class="idiomas" aria-label="Idioma">
+                <button type="button" class="idioma-activo" data-lang="es" aria-pressed="true">ES</button>
+                <button type="button" data-lang="en" aria-pressed="false">EN</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PRIMERA PANTALLA -->
+        <section class="hero" aria-labelledby="titulo-principal">
+            <div class="hero-luz"></div>
+
+            <div class="hero-contenido">
+                <p class="hero-etiqueta"
+                   data-es="ARTE · HISTORIA · CULTURA"
+                   data-en="ART · HISTORY · CULTURE">
+                    ARTE · HISTORIA · CULTURA
+                </p>
+
+                <h1 id="titulo-principal"
+                    data-es="El arte tiene mucho&lt;br&gt;que contar."
+                    data-en="Art has so much&lt;br&gt;to tell.">
+                    El arte tiene mucho<br>que contar.
+                </h1>
+
+                <p class="hero-descripcion"
+                   data-es="Descubre las historias, los misterios y las curiosidades que se esconden detrás de cada obra de arte."
+                   data-en="Discover the stories, mysteries and curiosities hidden behind every work of art.">
+                    Descubre las historias, los misterios y las curiosidades que se esconden detrás de cada obra de arte.
+                </p>
+
+                <a href="#revelacion" class="hero-boton"
+                   data-es="Mira más allá ↓"
+                   data-en="Look beyond ↓">
+                    Mira más allá ↓
+                </a>
+            </div>
+
+            <span class="hero-numero">01 / 03</span>
+        </section>
+
+        <!-- SEGUNDA PANTALLA -->
+        <section class="revelacion" id="revelacion" aria-labelledby="titulo-revelacion">
+
+            <p class="seccion-etiqueta revelar"
+               data-es="NO TODO ES LO QUE PARECE"
+               data-en="NOT EVERYTHING IS AS IT SEEMS">
+                NO TODO ES LO QUE PARECE
+            </p>
+
+            <div class="marco-escena revelar">
+                <div class="marco">
+                    <div class="marco-interior">
+                        <span class="marco-simbolo" aria-hidden="true">✦</span>
+
+                        <h2 id="titulo-revelacion"
+                            data-es="Mira más allá&lt;br&gt;de lo visible."
+                            data-en="Look beyond&lt;br&gt;what is visible.">
+                            Mira más allá<br>de lo visible.
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+            <p class="revelacion-texto revelar"
+               data-es="Hay historias que no caben dentro de un marco."
+               data-en="Some stories cannot be contained within a frame.">
+                Hay historias que no caben dentro de un marco.
+            </p>
+
+            <span class="seccion-numero">02 / 03</span>
+        </section>
+
+        <!-- TERCERA PANTALLA -->
+        <section class="invitacion" aria-labelledby="titulo-invitacion">
+
+            <div class="invitacion-contenido revelar">
+                <p class="seccion-etiqueta"
+                   data-es="LA HISTORIA CONTINÚA"
+                   data-en="THE STORY CONTINUES">
+                    LA HISTORIA CONTINÚA
+                </p>
+
+                <h2 id="titulo-invitacion"
+                    data-es="¿Te atreves a&lt;br&gt;mirar detrás?"
+                    data-en="Dare to look&lt;br&gt;behind the frame?">
+                    ¿Te atreves a<br>mirar detrás?
+                </h2>
+
+                <p data-es="Cada obra tiene algo que revelar. Solo tienes que acercarte."
+                   data-en="Every artwork has something to reveal. You only have to look closer.">
+                    Cada obra tiene algo que revelar. Solo tienes que acercarte.
+                </p>
+
+                <a href="pages/explora.html" class="boton-entrar"
+                   data-es="Entra y descubre ↗"
+                   data-en="Enter and discover ↗">
+                    Entra y descubre ↗
+                </a>
+            </div>
+
+            <span class="seccion-numero">03 / 03</span>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer class="pie-pagina">
+        <div class="pie-contenido">
+
+            <div class="pie-identidad">
+                <p class="pie-logo">TRAS EL MARCO</p>
+                <p class="pie-frase"
+                   data-es="El arte siempre tiene algo que contar."
+                   data-en="Art always has a story to tell.">
+                    El arte siempre tiene algo que contar.
+                </p>
+            </div>
+
+            <a href="#inicio" class="pie-volver"
+               data-es="Volver arriba ↑"
+               data-en="Back to top ↑">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+        <div class="pie-inferior">
+            <p>© 2026 Tras el Marco</p>
+        </div>
+    </footer>
+
+</body>
+</html>
