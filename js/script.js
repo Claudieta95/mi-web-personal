@@ -90,8 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             articulos: "Artículos",
             exposiciones: "Exposiciones",
             podcast: "Podcast",
-            youtube: "YouTube",
-            titulo: "Tras el Marco | Arte, historias y cultura"
+            youtube: "YouTube"
         },
         en: {
             inicio: "Home",
@@ -99,10 +98,56 @@ document.addEventListener("DOMContentLoaded", () => {
             articulos: "Articles",
             exposiciones: "Exhibitions",
             podcast: "Podcast",
-            youtube: "YouTube",
-            titulo: "Tras el Marco | Art, Stories and Culture"
+            youtube: "YouTube"
         }
     };
+
+    const titulosPaginas = {
+        inicio: {
+            es: "Tras el Marco | Arte, historias y cultura",
+            en: "Tras el Marco | Art, Stories and Culture"
+        },
+        explora: {
+            es: "Explora | Tras el Marco",
+            en: "Explore | Tras el Marco"
+        },
+        articulos: {
+            es: "Artículos | Tras el Marco",
+            en: "Articles | Tras el Marco"
+        },
+        articulo: {
+            es: "Artículo | Tras el Marco",
+            en: "Article | Tras el Marco"
+        },
+        exposiciones: {
+            es: "Exposiciones | Tras el Marco",
+            en: "Exhibitions | Tras el Marco"
+        },
+        podcast: {
+            es: "Podcast | Tras el Marco",
+            en: "Podcast | Tras el Marco"
+        },
+        youtube: {
+            es: "YouTube | Tras el Marco",
+            en: "YouTube | Tras el Marco"
+        }
+    };
+
+    function obtenerPaginaActual() {
+
+        const ruta = window.location.pathname;
+        const archivo = ruta.split("/").pop() || "index.html";
+
+        if (archivo === "index.html") return "inicio";
+        if (archivo === "explora.html") return "explora";
+        if (archivo === "articulos.html") return "articulos";
+        if (archivo === "articulo.html") return "articulo";
+        if (archivo === "exposiciones.html") return "exposiciones";
+        if (archivo === "podcast.html") return "podcast";
+        if (archivo === "youtube.html") return "youtube";
+
+        return "inicio";
+    }
 
     function cambiarIdioma(idioma) {
 
@@ -112,31 +157,38 @@ document.addEventListener("DOMContentLoaded", () => {
 
         document.documentElement.lang = idioma;
 
-        // Traducir el contenido de la portada.
+        // Traducir todos los elementos con data-es y data-en.
         document.querySelectorAll("[data-es][data-en]").forEach((elemento) => {
 
             const traduccion = elemento.dataset[idioma];
 
-            // Los títulos pueden contener un salto de línea.
-            // El resto del contenido se inserta como texto.
             if (elemento.matches("h1, h2")) {
+
                 const partes = traduccion.split(/<br\s*\/?>/i);
+
                 elemento.replaceChildren();
 
                 partes.forEach((parte, indice) => {
+
                     if (indice > 0) {
                         elemento.appendChild(document.createElement("br"));
                     }
 
-                    elemento.appendChild(document.createTextNode(parte));
+                    elemento.appendChild(
+                        document.createTextNode(parte)
+                    );
                 });
+
             } else {
+
                 elemento.textContent = traduccion;
             }
         });
 
-        // Traducir los enlaces del menú.
-        const enlaces = document.querySelectorAll(".nav-links a");
+        // Traducir ambos tipos de menú.
+        const enlaces = document.querySelectorAll(
+            ".nav-links a, .menu a"
+        );
 
         const claves = [
             "inicio",
@@ -148,55 +200,89 @@ document.addEventListener("DOMContentLoaded", () => {
         ];
 
         enlaces.forEach((enlace, indice) => {
+
             if (claves[indice]) {
+
                 enlace.textContent =
                     traduccionesMenu[idioma][claves[indice]];
             }
         });
 
-        // Cambiar el título de la pestaña.
-        document.title = traduccionesMenu[idioma].titulo;
+        // Mantener el título correcto de cada página.
+        const pagina = obtenerPaginaActual();
 
-        // Actualizar el botón activo.
-        document.querySelectorAll("[data-lang]").forEach((boton) => {
+        if (titulosPaginas[pagina]) {
 
-            const activo = boton.dataset.lang === idioma;
+            document.title = titulosPaginas[pagina][idioma];
+        }
+
+        // Actualizar los botones ES / EN.
+        document.querySelectorAll(
+            "[data-lang], [data-idioma]"
+        ).forEach((boton) => {
+
+            const idiomaBoton =
+                boton.dataset.lang || boton.dataset.idioma;
+
+            const activo = idiomaBoton === idioma;
 
             boton.classList.toggle("idioma-activo", activo);
             boton.setAttribute("aria-pressed", String(activo));
         });
 
-        // Guardar el idioma elegido.
+        // Guardar el idioma seleccionado.
         try {
+
             localStorage.setItem("trasElMarcoIdioma", idioma);
+
         } catch (error) {
+
             console.warn("No se pudo guardar el idioma.");
         }
+
+        // Avisar a otros scripts del cambio de idioma.
+        document.dispatchEvent(
+            new CustomEvent("traselmarco:idioma", {
+                detail: { idioma }
+            })
+        );
     }
 
     // ==========================================
     // 4. BOTONES ES / EN
     // ==========================================
 
-    document.querySelectorAll("[data-lang]").forEach((boton) => {
+    document.querySelectorAll(
+        "[data-lang], [data-idioma]"
+    ).forEach((boton) => {
 
         boton.addEventListener("click", () => {
-            cambiarIdioma(boton.dataset.lang);
-        });
 
+            const idioma =
+                boton.dataset.lang || boton.dataset.idioma;
+
+            cambiarIdioma(idioma);
+        });
     });
 
-    // Recuperar el idioma anterior.
+    // ==========================================
+    // 5. RECUPERAR EL IDIOMA GUARDADO
+    // ==========================================
+
     let idiomaInicial = "es";
 
     try {
+
         const idiomaGuardado =
             localStorage.getItem("trasElMarcoIdioma");
 
         if (traduccionesMenu[idiomaGuardado]) {
+
             idiomaInicial = idiomaGuardado;
         }
+
     } catch (error) {
+
         idiomaInicial = "es";
     }
 

@@ -1,0 +1,158 @@
+{
+  "articulos": [
+    {
+      "id": "gran-ola",
+      "publicado": true,
+      "destacado": true,
+      "categoria": {
+        "es": "Historia del arte",
+        "en": "Art history"
+      },
+      "titulo": {
+        "es": "Mucho más que una ola",
+        "en": "Much more than a wave"
+      },
+      "resumen": {
+        "es": "Una de las imágenes más reconocibles del arte japonés. Descubrimos qué hace tan especial esta obra de Hokusai.",
+        "en": "One of the most recognizable images in Japanese art. Discover what makes Hokusai's work so special."
+      },
+      "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/1280px-The_Great_Wave_off_Kanagawa.jpg",
+      "imagenAlt": {
+        "es": "La gran ola de Kanagawa, de Katsushika Hokusai",
+        "en": "The Great Wave off Kanagawa by Katsushika Hokusai"
+      },
+      "autor": "Tras el Marco",
+      "fecha": "",
+      "contenido": {
+        "es": [
+          {
+            "tipo": "parrafo",
+            "texto": "La gran ola de Kanagawa es una de las estampas japonesas más conocidas del mundo. Fue creada por Katsushika Hokusai durante el periodo Edo y pertenece a la serie Treinta y seis vistas del monte Fuji."
+          },
+          {
+            "tipo": "titulo",
+            "texto": "Una imagen llena de movimiento"
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "La composición enfrenta la fuerza de una enorme ola con la aparente fragilidad de las embarcaciones. Al fondo aparece el monte Fuji, pequeño pero reconocible."
+          },
+          {
+            "tipo": "titulo",
+            "texto": "Una obra para seguir descubriendo"
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Este es un artículo de demostración para probar el funcionamiento de Tras el Marco. Antes de publicarlo definitivamente, ampliaremos el contenido, revisaremos las fuentes y añadiremos los créditos de la imagen."
+          }
+        ],
+        "en": [
+          {
+            "tipo": "parrafo",
+            "texto": "The Great Wave off Kanagawa is one of the world's best-known Japanese prints. Katsushika Hokusai created it during the Edo period as part of the series Thirty-six Views of Mount Fuji."
+          },
+          {
+            "tipo": "titulo",
+            "texto": "An image full of movement"
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "The composition contrasts the force of a huge wave with the apparent fragility of the boats. Mount Fuji appears in the background."
+          },
+          {
+            "tipo": "titulo",
+            "texto": "A work worth exploring"
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "This is a demonstration article to test Tras el Marco. We will expand the content, verify sources and add image credits before publishing it as a finished article."
+          }
+        ]
+      }
+    },
+    {
+      "id": "arnolfini",
+      "publicado": false,
+      "destacado": false,
+      "categoria": {
+        "es": "Símbolos y significados",
+        "en": "Symbols and meanings"
+      },
+      "titulo": {
+        "es": "Los secretos de un retrato",
+        "en": "The secrets of a portrait"
+      },
+      "resumen": {
+        "es": "Un espejo, una habitación y una pintura llena de detalles que siguen despertando preguntas.",
+        "en": "A mirror, a room and a painting full of details that continue to raise questions."
+      },
+      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Van_Eyck_-_Arnolfini_Portrait.jpg?width=800",
+      "imagenAlt": {
+        "es": "El matrimonio Arnolfini, de Jan van Eyck",
+        "en": "The Arnolfini Portrait by Jan van Eyck"
+      },
+      "autor": "Tras el Marco",
+      "fecha": "",
+      "contenido": {
+        "es": [],
+        "en": []
+      }
+    },
+    {
+      "id": "embajadores",
+      "publicado": false,
+      "destacado": false,
+      "categoria": {
+        "es": "Misterios del arte",
+        "en": "Art mysteries"
+      },
+      "titulo": {
+        "es": "La imagen que cambia al mirar",
+        "en": "The image that changes when you look"
+      },
+      "resumen": {
+        "es": "Una pintura del Renacimiento que esconde una sorprendente ilusión visual.",
+        "en": "A Renaissance painting that hides a surprising visual illusion."
+      },
+      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/HOLBEIN-Hans-the-Younger-The-Ambassadors.jpg?width=800",
+      "imagenAlt": {
+        "es": "Los embajadores, de Hans Holbein el Joven",
+        "en": "The Ambassadors by Hans Holbein the Younger"
+      },
+      "autor": "Tras el Marco",
+      "fecha": "",
+      "contenido": {
+        "es": [],
+        "en": []
+      }
+    },
+    {
+      "id": "gioconda",
+      "publicado": false,
+      "destacado": false,
+      "categoria": {
+        "es": "Curiosidades",
+        "en": "Curiosities"
+      },
+      "titulo": {
+        "es": "La mirada más famosa del arte",
+        "en": "The most famous gaze in art"
+      },
+      "resumen": {
+        "es": "¿Por qué una pintura de dimensiones relativamente pequeñas se convirtió en un icono mundial?",
+        "en": "Why did a relatively small painting become a worldwide icon?"
+      },
+      "imagen": "https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_-_Mona_Lisa.jpg?width=800",
+      "imagenAlt": {
+        "es": "La Gioconda, de Leonardo da Vinci",
+        "en": "The Mona Lisa by Leonardo da Vinci"
+      },
+      "autor": "Tras el Marco",
+      "fecha": "",
+      "contenido": {
+        "es": [],
+        "en": []
+      }
+    }
+  ]
+}
