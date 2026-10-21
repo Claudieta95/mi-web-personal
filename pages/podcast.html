@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171513">
+    <meta name="description" content="Tras el Marco, un podcast sobre las historias, misterios y curiosidades que se esconden detrás del arte.">
+
+    <title>Podcast | Tras el Marco</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+
+    <style>
+        .podcast-hero {
+            min-height: 75svh;
+            padding: 110px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at 70% 65%, #46372d, transparent 65%),
+                #171513;
+            color: #f5f1e9;
+        }
+
+        .podcast-hero-contenido {
+            max-width: 950px;
+            animation: aparecer 1.2s ease both;
+        }
+
+        .podcast-etiqueta {
+            display: inline-block;
+            color: #b89973;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .podcast-hero h1 {
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(65px, 10vw, 135px);
+            font-weight: 400;
+            line-height: 1.12;
+        }
+
+        .podcast-hero-descripcion {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 19px;
+            line-height: 1.9;
+            color: #ded5ca;
+        }
+
+        .podcast-hero-enlace {
+            display: inline-block;
+            margin-top: 45px;
+            padding: 18px 34px;
+            border: 1px solid #b89973;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .podcast-hero-enlace:hover {
+            background: #f5f1e9;
+            color: #171513;
+        }
+
+        .podcast-presentacion {
+            padding: 120px 6%;
+            background: #f5f1e9;
+        }
+
+        .podcast-presentacion-interior {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 90px;
+        }
+
+        .podcast-portada {
+            aspect-ratio: 1;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                radial-gradient(circle at 60% 35%, #49382d, transparent 65%),
+                #171513;
+            color: #f5f1e9;
+            border: 1px solid #b89973;
+            box-shadow: 22px 25px 65px #17151320;
+        }
+
+        .podcast-portada-marca {
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #d3b899;
+        }
+
+        .podcast-portada-centro {
+            text-align: center;
+        }
+
+        .podcast-portada-simbolo {
+            display: block;
+            margin-bottom: 25px;
+            font-size: 60px;
+            color: #b89973;
+        }
+
+        .podcast-portada h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 5vw, 75px);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        .podcast-portada-pie {
+            text-align: center;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #d3b899;
+        }
+
+        .podcast-presentacion-texto h2 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 65px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .podcast-presentacion-texto p {
+            margin-bottom: 22px;
+            color: #665b52;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .podcast-episodios {
+            padding: 110px 6% 130px;
+            background: #eae2d6;
+        }
+
+        .podcast-episodios-interior {
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        .podcast-episodios-cabecera {
+            margin-bottom: 55px;
+        }
+
+        .podcast-episodios-cabecera h2 {
+            margin-top: 20px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: 400;
+        }
+
+        .podcast-episodio {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            overflow: hidden;
+            background: #fffdfa;
+            border: 1px solid #d8c8b7;
+        }
+
+        .podcast-episodio-visual {
+            min-height: 440px;
+            padding: 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                radial-gradient(circle at center, #54402f, transparent 70%),
+                #171513;
+            color: #f5f1e9;
+        }
+
+        .podcast-episodio-numero {
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #d3b899;
+        }
+
+        .podcast-episodio-simbolo {
+            align-self: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(85px, 12vw, 150px);
+            color: #b89973;
+        }
+
+        .podcast-episodio-visual-pie {
+            text-align: right;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #d3b899;
+        }
+
+        .podcast-episodio-contenido {
+            padding: clamp(35px, 5vw, 75px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .podcast-episodio-contenido h3 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(36px, 4vw, 60px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .podcast-episodio-contenido p {
+            color: #665b52;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .podcast-proximamente {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 12px 0;
+            border-bottom: 1px solid #b89973;
+            color: #80664d;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .podcast-spotify {
+            padding: 110px 6%;
+            background: #f5f1e9;
+            text-align: center;
+        }
+
+        .podcast-spotify-interior {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .podcast-spotify h2 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 65px);
+            font-weight: 400;
+        }
+
+        .podcast-spotify p {
+            font-size: 17px;
+            line-height: 1.9;
+            color: #665b52;
+        }
+
+        .podcast-spotify-estado {
+            display: inline-block;
+            margin-top: 35px;
+            padding: 17px 32px;
+            border: 1px solid #b89973;
+            color: #80664d;
+            font-size: 14px;
+        }
+
+        .podcast-cierre {
+            min-height: 55svh;
+            padding: 100px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at center, #403027, transparent 70%),
+                #171513;
+            color: #f5f1e9;
+        }
+
+        .podcast-cierre h2 {
+            max-width: 850px;
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(43px, 6vw, 78px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .podcast-cierre p {
+            color: #ded5ca;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 900px) {
+            .podcast-presentacion-interior,
+            .podcast-episodio {
+                grid-template-columns: 1fr;
+            }
+
+            .podcast-presentacion-interior {
+                gap: 65px;
+            }
+
+            .podcast-portada {
+                width: min(100%, 520px);
+                margin: 0 auto;
+            }
+
+            .podcast-episodio-visual {
+                min-height: 320px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .podcast-hero {
+                min-height: 65svh;
+                padding: 85px 20px;
+            }
+
+            .podcast-hero-descripcion {
+                font-size: 16px;
+            }
+
+            .podcast-presentacion,
+            .podcast-episodios,
+            .podcast-spotify {
+                padding: 80px 20px;
+            }
+
+            .podcast-portada {
+                padding: 25px;
+            }
+
+            .podcast-episodio-contenido {
+                padding: 30px;
+            }
+
+            .podcast-cierre {
+                padding: 90px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-podcast" id="inicio">
+
+    <header class="cabecera">
+        <nav class="navegacion" aria-label="Navegación principal">
+
+            <a href="../index.html" class="logo">
+                TRAS EL MARCO<span>.</span>
+            </a>
+
+            <div class="menu">
+                <a href="../index.html">Inicio</a>
+                <a href="explora.html">Explora</a>
+                <a href="articulos.html">Artículos</a>
+                <a href="exposiciones.html">Exposiciones</a>
+                <a href="podcast.html" class="activo" aria-current="page">Podcast</a>
+                <a href="youtube.html">YouTube</a>
+            </div>
+
+            <div class="idiomas">
+                <button type="button" class="idioma"
+                        data-idioma="es" aria-pressed="true">ES</button>
+                <button type="button" class="idioma"
+                        data-idioma="en" aria-pressed="false">EN</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="podcast-hero">
+            <div class="podcast-hero-contenido">
+
+                <span class="podcast-etiqueta"
+                      data-es="HISTORIAS PARA ESCUCHAR"
+                      data-en="STORIES TO LISTEN TO">
+                    HISTORIAS PARA ESCUCHAR
+                </span>
+
+                <h1>Tras el Marco.</h1>
+
+                <p class="podcast-hero-descripcion"
+                   data-es="Un podcast para descubrir las historias, los misterios y las curiosidades que se esconden detrás del arte."
+                   data-en="A podcast exploring the stories, mysteries and curiosities hidden behind art.">
+                    Un podcast para descubrir las historias, los misterios y las curiosidades que se esconden detrás del arte.
+                </p>
+
+                <a href="#episodios" class="podcast-hero-enlace"
+                   data-es="Descubre el primer episodio ↓"
+                   data-en="Discover the first episode ↓">
+                    Descubre el primer episodio ↓
+                </a>
+
+            </div>
+        </section>
+
+        <!-- SOBRE EL PODCAST -->
+
+        <section class="podcast-presentacion">
+
+            <div class="podcast-presentacion-interior">
+
+                <div class="podcast-portada" aria-label="Diseño provisional de la portada de Tras el Marco">
+
+                    <span class="podcast-portada-marca">ARTE · HISTORIA · CULTURA</span>
+
+                    <div class="podcast-portada-centro">
+                        <span class="podcast-portada-simbolo" aria-hidden="true">✦</span>
+                        <h2>Tras el<br>Marco</h2>
+                    </div>
+
+                    <span class="podcast-portada-pie">UN PODCAST SOBRE ARTE</span>
+
+                </div>
+
+                <div class="podcast-presentacion-texto">
+
+                    <span class="podcast-etiqueta"
+                          data-es="MÁS ALLÁ DE LAS OBRAS"
+                          data-en="BEYOND THE ARTWORK">
+                        MÁS ALLÁ DE LAS OBRAS
+                    </span>
+
+                    <h2 data-es="El arte también se escucha."
+                        data-en="Art can also be heard.">
+                        El arte también se escucha.
+                    </h2>
+
+                    <p data-es="Detrás de cada obra hay una historia. Algunas son conocidas; otras están llenas de preguntas, detalles inesperados y curiosidades."
+                       data-en="Behind every artwork lies a story. Some are well known; others are full of questions, unexpected details and curiosities.">
+                        Detrás de cada obra hay una historia. Algunas son conocidas; otras están llenas de preguntas, detalles inesperados y curiosidades.
+                    </p>
+
+                    <p data-es="Tras el Marco nace como un espacio para acercarnos al arte a través de sus historias, descubrir otras facetas de los artistas y mirar más allá de lo que vemos."
+                       data-en="Tras el Marco is a space to explore art through its stories, discover different sides of artists and look beyond what we see.">
+                        Tras el Marco nace como un espacio para acercarnos al arte a través de sus historias, descubrir otras facetas de los artistas y mirar más allá de lo que vemos.
+                    </p>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PRIMER EPISODIO -->
+
+        <section class="podcast-episodios" id="episodios">
+
+            <div class="podcast-episodios-interior">
+
+                <div class="podcast-episodios-cabecera">
+                    <span class="podcast-etiqueta"
+                          data-es="EL COMIENZO DE UNA HISTORIA"
+                          data-en="THE BEGINNING OF A STORY">
+                        EL COMIENZO DE UNA HISTORIA
+                    </span>
+
+                    <h2 data-es="Primer episodio"
+                        data-en="First episode">
+                        Primer episodio
+                    </h2>
+                </div>
+
+                <article class="podcast-episodio">
+
+                    <div class="podcast-episodio-visual">
+                        <span class="podcast-episodio-numero">EP. 001</span>
+                        <span class="podcast-episodio-simbolo" aria-hidden="true">✦</span>
+                        <span class="podcast-episodio-visual-pie">TRAS EL MARCO</span>
+                    </div>
+
+                    <div class="podcast-episodio-contenido">
+
+                        <span class="podcast-etiqueta"
+                              data-es="ARTE · MISTERIO · HISTORIA"
+                              data-en="ART · MYSTERY · HISTORY">
+                            ARTE · MISTERIO · HISTORIA
+                        </span>
+
+                        <h3 data-es="El misterioso robo de una cubierta de Dalí de 150 kilos"
+                            data-en="The mysterious theft of a 150-kilo Dalí book cover">
+                            El misterioso robo de una cubierta de Dalí de 150 kilos
+                        </h3>
+
+                        <p data-es="¿Cómo puede desaparecer de un museo una cubierta de bronce de 150 kilos? Descubrimos la historia de una creación extraordinaria de Salvador Dalí y el robo que la convirtió en protagonista de una investigación."
+                           data-en="How can a 150-kilo bronze book cover disappear from a museum? Discover the story of an extraordinary Salvador Dalí creation and the theft that made it the subject of an investigation.">
+                            ¿Cómo puede desaparecer de un museo una cubierta de bronce de 150 kilos? Descubrimos la historia de una creación extraordinaria de Salvador Dalí y el robo que la convirtió en protagonista de una investigación.
+                        </p>
+
+                        <span class="podcast-proximamente"
+                              data-es="Próximamente en Spotify"
+                              data-en="Coming soon to Spotify">
+                            Próximamente en Spotify
+                        </span>
+
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SPOTIFY -->
+
+        <section class="podcast-spotify">
+
+            <div class="podcast-spotify-interior">
+
+                <span class="podcast-etiqueta"
+                      data-es="DÓNDE ESCUCHARLO"
+                      data-en="WHERE TO LISTEN">
+                    DÓNDE ESCUCHARLO
+                </span>
+
+                <h2 data-es="Muy pronto en Spotify."
+                    data-en="Coming soon to Spotify.">
+                    Muy pronto en Spotify.
+                </h2>
+
+                <p data-es="Estamos preparando el primer episodio de Tras el Marco. Cuando esté publicado, podrás encontrar aquí el enlace para escucharlo."
+                   data-en="The first episode of Tras el Marco is being prepared. Once it is published, you will find the listening link here.">
+                    Estamos preparando el primer episodio de Tras el Marco. Cuando esté publicado, podrás encontrar aquí el enlace para escucharlo.
+                </p>
+
+                <span class="podcast-spotify-estado"
+                      data-es="Primer episodio en preparación"
+                      data-en="First episode in preparation">
+                    Primer episodio en preparación
+                </span>
+
+            </div>
+        </section>
+
+        <!-- CIERRE -->
+
+        <section class="podcast-cierre">
+
+            <span class="podcast-etiqueta"
+                  data-es="TRAS EL MARCO"
+                  data-en="BEYOND THE FRAME">
+                TRAS EL MARCO
+            </span>
+
+            <h2 data-es="Hay historias que merecen ser escuchadas."
+                data-en="Some stories deserve to be heard.">
+                Hay historias que merecen ser escuchadas.
+            </h2>
+
+            <p data-es="Y esta es solo la primera."
+               data-en="And this is only the first.">
+                Y esta es solo la primera.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="pie-pagina">
+
+        <div class="pie-contenido">
+
+            <div class="pie-identidad">
+                <span class="pie-logo">
+                    TRAS EL MARCO<span>.</span>
+                </span>
+
+                <p class="pie-frase"
+                   data-es="Las historias que se esconden detrás del arte."
+                   data-en="The stories hidden behind art.">
+                    Las historias que se esconden detrás del arte.
+                </p>
+            </div>
+
+            <a href="#inicio" class="pie-volver"
+               data-es="Volver arriba ↑"
+               data-en="Back to top ↑">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+        <div class="pie-inferior">
+            <span>© 2026 Tras el Marco</span>
+        </div>
+
+    </footer>
+
+</body>
+</html>
