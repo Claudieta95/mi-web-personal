@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#171513">
+
+    <meta name="description"
+          content="Descubre Tras el Marco en YouTube: historias, curiosidades y nuevas formas de mirar el arte.">
+
+    <title>YouTube | Tras el Marco</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js" defer></script>
+
+    <style>
+        .youtube-hero {
+            min-height: 75svh;
+            padding: 110px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background:
+                radial-gradient(ellipse at 70% 65%, #46372d, transparent 65%),
+                #171513;
+            color: #f5f1e9;
+        }
+
+        .youtube-hero-contenido {
+            max-width: 950px;
+        }
+
+        .youtube-etiqueta {
+            display: inline-block;
+            color: #b89973;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .youtube-hero h1 {
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 8vw, 115px);
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        .youtube-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #ded5ca;
+            font-size: 18px;
+            line-height: 1.9;
+        }
+
+        .youtube-boton {
+            display: inline-block;
+            margin-top: 42px;
+            padding: 17px 32px;
+            border: 1px solid #b89973;
+            color: #f5f1e9;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .youtube-boton:hover {
+            background: #f5f1e9;
+            color: #171513;
+        }
+
+        .youtube-presentacion {
+            padding: 120px 6%;
+            background: #f5f1e9;
+        }
+
+        .youtube-presentacion-interior {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 85px;
+        }
+
+        .youtube-presentacion-texto h2 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 68px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .youtube-presentacion-texto p {
+            margin-bottom: 22px;
+            color: #665b52;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .youtube-pantalla {
+            aspect-ratio: 16 / 10;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background:
+                radial-gradient(circle at center, #483629, transparent 75%),
+                #171513;
+            border: 1px solid #b89973;
+            color: #f5f1e9;
+            box-shadow: 22px 25px 65px #17151320;
+        }
+
+        .youtube-pantalla-marca {
+            color: #d3b899;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .youtube-pantalla-centro {
+            text-align: center;
+        }
+
+        .youtube-play {
+            width: 86px;
+            height: 86px;
+            margin: 0 auto 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #b89973;
+            border-radius: 50%;
+            color: #d3b899;
+            font-size: 30px;
+        }
+
+        .youtube-pantalla h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 4vw, 52px);
+            font-weight: 400;
+        }
+
+        .youtube-pantalla-pie {
+            text-align: right;
+            color: #d3b899;
+            font-size: 11px;
+            letter-spacing: 3px;
+        }
+
+        .youtube-contenidos {
+            padding: 115px 6% 130px;
+            background: #eae2d6;
+        }
+
+        .youtube-contenidos-interior {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .youtube-contenidos-cabecera {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+
+        .youtube-contenidos-cabecera h2 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 70px);
+            font-weight: 400;
+        }
+
+        .youtube-contenidos-cabecera p {
+            color: #665b52;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .youtube-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .youtube-tarjeta {
+            display: flex;
+            flex-direction: column;
+            background: #fffdfa;
+            border: 1px solid #dfd1c2;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .youtube-tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 55px #17151315;
+        }
+
+        .youtube-tarjeta-visual {
+            aspect-ratio: 16 / 10;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                radial-gradient(circle at center, #483629, transparent 75%),
+                #171513;
+            color: #b89973;
+            font-family: 'Playfair Display', serif;
+            font-size: 70px;
+        }
+
+        .youtube-tarjeta-contenido {
+            padding: 35px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .youtube-tarjeta-numero {
+            color: #94704e;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .youtube-tarjeta h3 {
+            margin: 22px 0 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: 34px;
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .youtube-tarjeta p {
+            color: #665b52;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .youtube-estado {
+            display: inline-block;
+            align-self: flex-start;
+            margin-top: auto;
+            padding-top: 28px;
+            color: #80664d;
+            font-size: 13px;
+        }
+
+        .youtube-cierre {
+            min-height: 55svh;
+            padding: 100px 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5f1e9;
+            background:
+                radial-gradient(ellipse at center, #403027, transparent 70%),
+                #171513;
+        }
+
+        .youtube-cierre h2 {
+            max-width: 850px;
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 78px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .youtube-cierre p {
+            color: #ded5ca;
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        @media (max-width: 950px) {
+            .youtube-presentacion-interior {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .youtube-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .youtube-hero {
+                min-height: 65svh;
+                padding: 85px 20px;
+            }
+
+            .youtube-hero p {
+                font-size: 16px;
+            }
+
+            .youtube-presentacion,
+            .youtube-contenidos {
+                padding: 80px 20px;
+            }
+
+            .youtube-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .youtube-tarjeta h3 {
+                font-size: 30px;
+            }
+
+            .youtube-cierre {
+                padding: 90px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body class="pagina-youtube" id="inicio">
+
+    <!-- NAVEGACIÓN -->
+
+    <header class="cabecera">
+        <nav class="navbar" aria-label="Navegación principal">
+
+            <a href="../index.html" class="logo">
+                TRAS EL MARCO
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="explora.html">Explora</a></li>
+                <li><a href="articulos.html">Artículos</a></li>
+                <li><a href="exposiciones.html">Exposiciones</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li>
+                    <a href="youtube.html"
+                       class="activo"
+                       aria-current="page">YouTube</a>
+                </li>
+            </ul>
+
+            <div class="idiomas">
+                <button type="button"
+                        class="idioma-activo"
+                        data-lang="es"
+                        aria-pressed="true">ES</button>
+
+                <button type="button"
+                        data-lang="en"
+                        aria-pressed="false">EN</button>
+            </div>
+
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- PORTADA -->
+
+        <section class="youtube-hero">
+
+            <div class="youtube-hero-contenido">
+
+                <span class="youtube-etiqueta"
+                      data-es="EL ARTE EN MOVIMIENTO"
+                      data-en="ART IN MOTION">
+                    EL ARTE EN MOVIMIENTO
+                </span>
+
+                <h1 data-es="Otra forma de mirar."
+                    data-en="A different way to see.">
+                    Otra forma de mirar.
+                </h1>
+
+                <p data-es="Historias, curiosidades y detalles del arte contados a través de imágenes y vídeos. Porque siempre hay algo más detrás de lo que vemos."
+                   data-en="Stories, curiosities and details from the art world told through images and videos. Because there is always more behind what we see.">
+                    Historias, curiosidades y detalles del arte contados a través de imágenes y vídeos. Porque siempre hay algo más detrás de lo que vemos.
+                </p>
+
+                <a href="#contenido"
+                   class="youtube-boton"
+                   data-es="Descubre el canal ↓"
+                   data-en="Discover the channel ↓">
+                    Descubre el canal ↓
+                </a>
+
+            </div>
+        </section>
+
+        <!-- PRESENTACIÓN -->
+
+        <section class="youtube-presentacion" id="contenido">
+
+            <div class="youtube-presentacion-interior">
+
+                <div class="youtube-presentacion-texto">
+
+                    <span class="youtube-etiqueta"
+                          data-es="TRAS EL MARCO EN VÍDEO"
+                          data-en="TRAS EL MARCO ON VIDEO">
+                        TRAS EL MARCO EN VÍDEO
+                    </span>
+
+                    <h2 data-es="Hay detalles que merecen verse."
+                        data-en="Some details deserve a closer look.">
+                        Hay detalles que merecen verse.
+                    </h2>
+
+                    <p data-es="El arte está lleno de historias sorprendentes, símbolos ocultos y pequeños detalles que muchas veces pasan desapercibidos."
+                       data-en="Art is full of surprising stories, hidden symbols and small details that often go unnoticed.">
+                        El arte está lleno de historias sorprendentes, símbolos ocultos y pequeños detalles que muchas veces pasan desapercibidos.
+                    </p>
+
+                    <p data-es="En este espacio reuniremos los vídeos de Tras el Marco para seguir descubriendo el arte desde otra perspectiva."
+                       data-en="Here we will bring together Tras el Marco videos to keep exploring art from a different perspective.">
+                        En este espacio reuniremos los vídeos de Tras el Marco para seguir descubriendo el arte desde otra perspectiva.
+                    </p>
+
+                </div>
+
+                <!-- IMAGEN EDITORIAL, NO ES UN REPRODUCTOR -->
+
+                <div class="youtube-pantalla"
+                     aria-label="Diseño editorial de Tras el Marco en vídeo">
+
+                    <span class="youtube-pantalla-marca">
+                        TRAS EL MARCO
+                    </span>
+
+                    <div class="youtube-pantalla-centro">
+
+                        <div class="youtube-play" aria-hidden="true">▶</div>
+
+                        <h3>El arte tiene<br>mucho que contar.</h3>
+
+                    </div>
+
+                    <span class="youtube-pantalla-pie">
+                        ARTE · HISTORIA · CULTURA
+                    </span>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- FUTUROS CONTENIDOS -->
+
+        <section class="youtube-contenidos">
+
+            <div class="youtube-contenidos-interior">
+
+                <div class="youtube-contenidos-cabecera">
+
+                    <span class="youtube-etiqueta"
+                          data-es="PRÓXIMOS CONTENIDOS"
+                          data-en="UPCOMING CONTENT">
+                        PRÓXIMOS CONTENIDOS
+                    </span>
+
+                    <h2 data-es="Historias para descubrir."
+                        data-en="Stories to discover.">
+                        Historias para descubrir.
+                    </h2>
+
+                    <p data-es="Diferentes maneras de acercarnos al arte, descubrir sus secretos y conocer las historias que se esconden detrás de cada obra."
+                       data-en="Different ways to explore art, uncover its secrets and discover the stories hidden behind each artwork.">
+                        Diferentes maneras de acercarnos al arte, descubrir sus secretos y conocer las historias que se esconden detrás de cada obra.
+                    </p>
+
+                </div>
+
+                <div class="youtube-grid">
+
+                    <!-- TARJETA 1 -->
+
+                    <article class="youtube-tarjeta revelar">
+
+                        <div class="youtube-tarjeta-visual" aria-hidden="true">
+                            ✦
+                        </div>
+
+                        <div class="youtube-tarjeta-contenido">
+
+                            <span class="youtube-tarjeta-numero">01</span>
+
+                            <h3 data-es="Historias del arte"
+                                data-en="Art stories">
+                                Historias del arte
+                            </h3>
+
+                            <p data-es="Relatos sobre obras, artistas y acontecimientos que forman parte de la historia del arte."
+                               data-en="Stories about artworks, artists and events that form part of art history.">
+                                Relatos sobre obras, artistas y acontecimientos que forman parte de la historia del arte.
+                            </p>
+
+                            <span class="youtube-estado"
+                                  data-es="Próximamente"
+                                  data-en="Coming soon">
+                                Próximamente
+                            </span>
+
+                        </div>
+                    </article>
+
+                    <!-- TARJETA 2 -->
+
+                    <article class="youtube-tarjeta revelar">
+
+                        <div class="youtube-tarjeta-visual" aria-hidden="true">
+                            ◇
+                        </div>
+
+                        <div class="youtube-tarjeta-contenido">
+
+                            <span class="youtube-tarjeta-numero">02</span>
+
+                            <h3 data-es="Detalles y curiosidades"
+                                data-en="Details and curiosities">
+                                Detalles y curiosidades
+                            </h3>
+
+                            <p data-es="Símbolos, elementos y pequeñas pistas que nos ayudan a mirar las obras con otros ojos."
+                               data-en="Symbols, elements and small clues that help us see artworks in a new light.">
+                                Símbolos, elementos y pequeñas pistas que nos ayudan a mirar las obras con otros ojos.
+                            </p>
+
+                            <span class="youtube-estado"
+                                  data-es="Próximamente"
+                                  data-en="Coming soon">
+                                Próximamente
+                            </span>
+
+                        </div>
+                    </article>
+
+                    <!-- TARJETA 3 -->
+
+                    <article class="youtube-tarjeta revelar">
+
+                        <div class="youtube-tarjeta-visual" aria-hidden="true">
+                            ✧
+                        </div>
+
+                        <div class="youtube-tarjeta-contenido">
+
+                            <span class="youtube-tarjeta-numero">03</span>
+
+                            <h3 data-es="Arte en un minuto"
+                                data-en="Art in a minute">
+                                Arte en un minuto
+                            </h3>
+
+                            <p data-es="Pequeñas historias y curiosidades para descubrir el arte de forma breve y visual."
+                               data-en="Short, visual stories and curiosities that make art easy to discover.">
+                                Pequeñas historias y curiosidades para descubrir el arte de forma breve y visual.
+                            </p>
+
+                            <span class="youtube-estado"
+                                  data-es="Próximamente"
+                                  data-en="Coming soon">
+                                Próximamente
+                            </span>
+
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CIERRE -->
+
+        <section class="youtube-cierre">
+
+            <span class="youtube-etiqueta"
+                  data-es="SIGUE DESCUBRIENDO"
+                  data-en="KEEP DISCOVERING">
+                SIGUE DESCUBRIENDO
+            </span>
+
+            <h2 data-es="A veces, basta con mirar de nuevo."
+                data-en="Sometimes, all it takes is another look.">
+                A veces, basta con mirar de nuevo.
+            </h2>
+
+            <p data-es="Porque el arte siempre tiene algo más que mostrar."
+               data-en="Because art always has something more to reveal.">
+                Porque el arte siempre tiene algo más que mostrar.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="pie-pagina">
+
+        <div class="pie-contenido">
+
+            <div class="pie-identidad">
+
+                <p class="pie-logo">TRAS EL MARCO</p>
+
+                <p class="pie-frase"
+                   data-es="El arte siempre tiene algo que contar."
+                   data-en="Art always has a story to tell.">
+                    El arte siempre tiene algo que contar.
+                </p>
+
+            </div>
+
+            <a href="#inicio"
+               class="pie-volver"
+               data-es="Volver arriba ↑"
+               data-en="Back to top ↑">
+                Volver arriba ↑
+            </a>
+
+        </div>
+
+        <div class="pie-inferior">
+            <p>© 2026 Tras el Marco</p>
+        </div>
+
+    </footer>
+
+</body>
+</html>
