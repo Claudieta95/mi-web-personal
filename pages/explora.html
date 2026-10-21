@@ -16,11 +16,12 @@
     <!-- MENÚ -->
     <header class="cabecera">
         <nav class="navbar" aria-label="Navegación principal">
+
             <a href="../index.html" class="logo">TRAS EL MARCO</a>
 
             <ul class="nav-links">
                 <li><a href="../index.html">Inicio</a></li>
-                <li><a href="explora.html" class="activo">Explora</a></li>
+                <li><a href="explora.html" class="activo" aria-current="page">Explora</a></li>
                 <li><a href="articulos.html">Artículos</a></li>
                 <li><a href="exposiciones.html">Exposiciones</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
@@ -28,11 +29,16 @@
             </ul>
 
             <div class="idiomas" aria-label="Idioma">
-                <button type="button" class="idioma-activo"
-                        data-lang="es" aria-pressed="true">ES</button>
                 <button type="button"
-                        data-lang="en" aria-pressed="false">EN</button>
+                        class="idioma-activo"
+                        data-lang="es"
+                        aria-pressed="true">ES</button>
+
+                <button type="button"
+                        data-lang="en"
+                        aria-pressed="false">EN</button>
             </div>
+
         </nav>
     </header>
 
@@ -40,7 +46,9 @@
 
         <!-- PRESENTACIÓN -->
         <section class="explora-hero">
+
             <div class="explora-hero-contenido">
+
                 <p class="seccion-etiqueta"
                    data-es="UN UNIVERSO POR DESCUBRIR"
                    data-en="A WORLD TO DISCOVER">
@@ -63,6 +71,7 @@
                    data-en="Start exploring ↓">
                     Empieza a explorar ↓
                 </a>
+
             </div>
         </section>
 
@@ -70,6 +79,7 @@
         <section class="explora-categorias" id="categorias">
 
             <div class="explora-introduccion revelar">
+
                 <p class="seccion-etiqueta"
                    data-es="OTRAS FORMAS DE MIRAR"
                    data-en="NEW WAYS OF SEEING">
@@ -85,12 +95,14 @@
                    data-en="Four ways to discover what often goes unnoticed.">
                     Cuatro caminos para descubrir aquello que muchas veces pasa desapercibido.
                 </p>
+
             </div>
 
             <div class="explora-grid">
 
-                <!-- TARJETA 1 -->
+                <!-- TARJETA 1: EL BOSCO -->
                 <article class="explora-tarjeta revelar">
+
                     <div class="explora-imagen">
                         <img
                             src="https://commons.wikimedia.org/wiki/Special:FilePath/The_Garden_of_Earthly_Delights_by_Hieronymus_Bosch.jpg?width=900"
@@ -99,6 +111,7 @@
                     </div>
 
                     <div class="explora-tarjeta-contenido">
+
                         <span class="explora-indice">01</span>
 
                         <h3 data-es="Historias sorprendentes"
@@ -111,7 +124,11 @@
                             Obras que esconden relatos inesperados y episodios fascinantes de la historia del arte.
                         </p>
 
-                        <p class="explora-obra">El Bosco · El jardín de las delicias</p>
+                        <p class="explora-obra"
+                           data-es="El Bosco · El jardín de las delicias"
+                           data-en="Hieronymus Bosch · The Garden of Earthly Delights">
+                            El Bosco · El jardín de las delicias
+                        </p>
 
                         <a class="explora-fuente"
                            href="https://commons.wikimedia.org/wiki/File:The_Garden_of_Earthly_Delights_by_Hieronymus_Bosch.jpg"
@@ -121,11 +138,13 @@
                            data-en="View image and license ↗">
                             Ver imagen y licencia ↗
                         </a>
+
                     </div>
                 </article>
 
-                <!-- TARJETA 2 -->
+                <!-- TARJETA 2: HOLBEIN -->
                 <article class="explora-tarjeta revelar">
+
                     <div class="explora-imagen">
                         <img
                             src="https://commons.wikimedia.org/wiki/Special:FilePath/HOLBEIN-Hans-the-Younger-The-Ambassadors.jpg?width=900"
@@ -134,6 +153,7 @@
                     </div>
 
                     <div class="explora-tarjeta-contenido">
+
                         <span class="explora-indice">02</span>
 
                         <h3 data-es="Misterios del arte"
@@ -146,7 +166,11 @@
                             Enigmas visuales, perspectivas sorprendentes y preguntas que invitan a investigar.
                         </p>
 
-                        <p class="explora-obra">Hans Holbein el Joven · Los embajadores</p>
+                        <p class="explora-obra"
+                           data-es="Hans Holbein el Joven · Los embajadores"
+                           data-en="Hans Holbein the Younger · The Ambassadors">
+                            Hans Holbein el Joven · Los embajadores
+                        </p>
 
                         <a class="explora-fuente"
                            href="https://commons.wikimedia.org/wiki/File:HOLBEIN-Hans-the-Younger-The-Ambassadors.jpg"
@@ -156,11 +180,13 @@
                            data-en="View image and license ↗">
                             Ver imagen y licencia ↗
                         </a>
+
                     </div>
                 </article>
 
-                <!-- TARJETA 3 -->
+                <!-- TARJETA 3: VAN EYCK -->
                 <article class="explora-tarjeta revelar">
+
                     <div class="explora-imagen">
                         <img
                             src="https://commons.wikimedia.org/wiki/Special:FilePath/Van_Eyck_-_Arnolfini_Portrait.jpg?width=900"
@@ -169,6 +195,7 @@
                     </div>
 
                     <div class="explora-tarjeta-contenido">
+
                         <span class="explora-indice">03</span>
 
                         <h3 data-es="Símbolos y significados"
@@ -181,7 +208,11 @@
                             Objetos, gestos y elementos que pueden ayudarnos a interpretar una obra.
                         </p>
 
-                        <p class="explora-obra">Jan van Eyck · El matrimonio Arnolfini</p>
+                        <p class="explora-obra"
+                           data-es="Jan van Eyck · El matrimonio Arnolfini"
+                           data-en="Jan van Eyck · The Arnolfini Portrait">
+                            Jan van Eyck · El matrimonio Arnolfini
+                        </p>
 
                         <a class="explora-fuente"
                            href="https://commons.wikimedia.org/wiki/File:Van_Eyck_-_Arnolfini_Portrait.jpg"
@@ -191,11 +222,13 @@
                            data-en="View image and license ↗">
                             Ver imagen y licencia ↗
                         </a>
+
                     </div>
                 </article>
 
-                <!-- TARJETA 4 -->
+                <!-- TARJETA 4: LEONARDO -->
                 <article class="explora-tarjeta revelar">
+
                     <div class="explora-imagen">
                         <img
                             src="https://commons.wikimedia.org/wiki/Special:FilePath/Leonardo_da_Vinci_-_Mona_Lisa.jpg?width=900"
@@ -204,6 +237,7 @@
                     </div>
 
                     <div class="explora-tarjeta-contenido">
+
                         <span class="explora-indice">04</span>
 
                         <h3 data-es="Detalles ocultos"
@@ -216,7 +250,11 @@
                             Una invitación a observar con calma y descubrir aspectos que una primera mirada puede pasar por alto.
                         </p>
 
-                        <p class="explora-obra">Leonardo da Vinci · La Gioconda</p>
+                        <p class="explora-obra"
+                           data-es="Leonardo da Vinci · La Gioconda"
+                           data-en="Leonardo da Vinci · Mona Lisa">
+                            Leonardo da Vinci · La Gioconda
+                        </p>
 
                         <a class="explora-fuente"
                            href="https://commons.wikimedia.org/wiki/File:Leonardo_da_Vinci_-_Mona_Lisa.jpg"
@@ -226,6 +264,7 @@
                            data-en="View image and license ↗">
                             Ver imagen y licencia ↗
                         </a>
+
                     </div>
                 </article>
 
@@ -234,7 +273,9 @@
 
         <!-- CIERRE -->
         <section class="explora-cierre">
+
             <div class="revelar">
+
                 <p class="seccion-etiqueta"
                    data-es="SIGUE DESCUBRIENDO"
                    data-en="KEEP DISCOVERING">
@@ -250,6 +291,7 @@
                    data-en="Sometimes, all it takes is a moment in front of an artwork to discover something new.">
                     A veces, basta con detenerse frente a una obra para empezar a descubrir algo nuevo.
                 </p>
+
             </div>
         </section>
 
@@ -257,8 +299,11 @@
 
     <!-- PIE DE PÁGINA -->
     <footer class="pie-pagina">
+
         <div class="pie-contenido">
+
             <div class="pie-identidad">
+
                 <p class="pie-logo">TRAS EL MARCO</p>
 
                 <p class="pie-frase"
@@ -266,6 +311,7 @@
                    data-en="Art always has a story to tell.">
                     El arte siempre tiene algo que contar.
                 </p>
+
             </div>
 
             <a href="#inicio"
@@ -274,11 +320,13 @@
                data-en="Back to top ↑">
                 Volver arriba ↑
             </a>
+
         </div>
 
         <div class="pie-inferior">
             <p>© 2026 Tras el Marco</p>
         </div>
+
     </footer>
 
 </body>
