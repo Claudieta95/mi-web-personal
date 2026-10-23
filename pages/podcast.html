@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#171513">
     <meta name="description" content="Tras el Marco, un podcast sobre las historias, misterios y curiosidades que se esconden detrás del arte.">
-
     <title>Podcast | Tras el Marco</title>
 
     <link rel="stylesheet" href="../css/style.css">
@@ -172,37 +171,64 @@
             border: 1px solid #d8c8b7;
         }
 
+        /* ÚNICA ZONA MODIFICADA: FOTOGRAFÍA DEL EPISODIO */
+
         .podcast-episodio-visual {
+            position: relative;
             min-height: 440px;
-            padding: 35px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            background:
-                radial-gradient(circle at center, #54402f, transparent 70%),
-                #171513;
+            overflow: hidden;
+            background: #171513;
             color: #f5f1e9;
         }
 
-        .podcast-episodio-numero {
-            font-size: 12px;
-            letter-spacing: 4px;
-            color: #d3b899;
+        .podcast-episodio-visual::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.30),
+                transparent 25%,
+                transparent 75%,
+                rgba(0, 0, 0, 0.40)
+            );
+            pointer-events: none;
         }
 
-        .podcast-episodio-simbolo {
-            align-self: center;
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(85px, 12vw, 150px);
-            color: #b89973;
+        .podcast-episodio-imagen {
+            position: absolute;
+            inset: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .podcast-episodio-numero {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            z-index: 1;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #f5f1e9;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
         }
 
         .podcast-episodio-visual-pie {
+            position: absolute;
+            right: 35px;
+            bottom: 35px;
+            z-index: 1;
             text-align: right;
             font-size: 12px;
             letter-spacing: 3px;
-            color: #d3b899;
+            color: #f5f1e9;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
         }
+
+        /* RESTO DEL DISEÑO ORIGINAL */
 
         .podcast-episodio-contenido {
             padding: clamp(35px, 5vw, 75px);
@@ -260,6 +286,17 @@
             color: #665b52;
         }
 
+        .podcast-reproductor {
+            margin-top: 35px;
+            width: 100%;
+        }
+
+        .podcast-reproductor iframe {
+            display: block;
+            width: 100%;
+            border: 0;
+        }
+
         .podcast-spotify-estado {
             display: inline-block;
             margin-top: 35px;
@@ -267,6 +304,13 @@
             border: 1px solid #b89973;
             color: #80664d;
             font-size: 14px;
+            text-decoration: none;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .podcast-spotify-estado:hover {
+            background: #171513;
+            color: #f5f1e9;
         }
 
         .podcast-cierre {
@@ -314,7 +358,7 @@
             }
 
             .podcast-episodio-visual {
-                min-height: 320px;
+                min-height: 400px;
             }
         }
 
@@ -336,6 +380,20 @@
 
             .podcast-portada {
                 padding: 25px;
+            }
+
+            .podcast-episodio-visual {
+                min-height: 320px;
+            }
+
+            .podcast-episodio-numero {
+                top: 25px;
+                left: 25px;
+            }
+
+            .podcast-episodio-visual-pie {
+                right: 25px;
+                bottom: 25px;
             }
 
             .podcast-episodio-contenido {
@@ -410,19 +468,23 @@
         <!-- SOBRE EL PODCAST -->
 
         <section class="podcast-presentacion">
-
             <div class="podcast-presentacion-interior">
 
-                <div class="podcast-portada" aria-label="Diseño provisional de la portada de Tras el Marco">
+                <div class="podcast-portada"
+                     aria-label="Presentación gráfica de Tras el Marco">
 
-                    <span class="podcast-portada-marca">ARTE · HISTORIA · CULTURA</span>
+                    <span class="podcast-portada-marca">
+                        ARTE · HISTORIA · CULTURA
+                    </span>
 
                     <div class="podcast-portada-centro">
                         <span class="podcast-portada-simbolo" aria-hidden="true">✦</span>
                         <h2>Tras el<br>Marco</h2>
                     </div>
 
-                    <span class="podcast-portada-pie">UN PODCAST SOBRE ARTE</span>
+                    <span class="podcast-portada-pie">
+                        UN PODCAST SOBRE ARTE
+                    </span>
 
                 </div>
 
@@ -456,10 +518,10 @@
         <!-- PRIMER EPISODIO -->
 
         <section class="podcast-episodios" id="episodios">
-
             <div class="podcast-episodios-interior">
 
                 <div class="podcast-episodios-cabecera">
+
                     <span class="podcast-etiqueta"
                           data-es="EL COMIENZO DE UNA HISTORIA"
                           data-en="THE BEGINNING OF A STORY">
@@ -470,14 +532,28 @@
                         data-en="First episode">
                         Primer episodio
                     </h2>
+
                 </div>
 
                 <article class="podcast-episodio">
 
                     <div class="podcast-episodio-visual">
-                        <span class="podcast-episodio-numero">EP. 001</span>
-                        <span class="podcast-episodio-simbolo" aria-hidden="true">✦</span>
-                        <span class="podcast-episodio-visual-pie">TRAS EL MARCO</span>
+
+                        <img
+                            class="podcast-episodio-imagen"
+                            src="../assets/img/dali-trabajando.png"
+                            alt="Salvador Dalí trabajando sobre una obra"
+                            loading="lazy"
+                        >
+
+                        <span class="podcast-episodio-numero">
+                            EP. 001
+                        </span>
+
+                        <span class="podcast-episodio-visual-pie">
+                            TRAS EL MARCO
+                        </span>
+
                     </div>
 
                     <div class="podcast-episodio-contenido">
@@ -488,9 +564,9 @@
                             ARTE · MISTERIO · HISTORIA
                         </span>
 
-                        <h3 data-es="El misterioso robo de una cubierta de Dalí de 150 kilos"
-                            data-en="The mysterious theft of a 150-kilo Dalí book cover">
-                            El misterioso robo de una cubierta de Dalí de 150 kilos
+                        <h3 data-es="¿Cómo robaron una obra de Dalí de 150 kilos?"
+                            data-en="How was a 150-kilo Dalí artwork stolen?">
+                            ¿Cómo robaron una obra de Dalí de 150 kilos?
                         </h3>
 
                         <p data-es="¿Cómo puede desaparecer de un museo una cubierta de bronce de 150 kilos? Descubrimos la historia de una creación extraordinaria de Salvador Dalí y el robo que la convirtió en protagonista de una investigación."
@@ -499,21 +575,19 @@
                         </p>
 
                         <span class="podcast-proximamente"
-                              data-es="Próximamente en Spotify"
-                              data-en="Coming soon to Spotify">
-                            Próximamente en Spotify
+                              data-es="Ya disponible en Spotify"
+                              data-en="Now on Spotify">
+                            Ya disponible en Spotify
                         </span>
 
                     </div>
                 </article>
-
             </div>
         </section>
 
         <!-- SPOTIFY -->
 
         <section class="podcast-spotify">
-
             <div class="podcast-spotify-interior">
 
                 <span class="podcast-etiqueta"
@@ -522,21 +596,38 @@
                     DÓNDE ESCUCHARLO
                 </span>
 
-                <h2 data-es="Muy pronto en Spotify."
-                    data-en="Coming soon to Spotify.">
-                    Muy pronto en Spotify.
+                <h2 data-es="Escucha el primer episodio."
+                    data-en="Listen to the first episode.">
+                    Escucha el primer episodio.
                 </h2>
 
-                <p data-es="Estamos preparando el primer episodio de Tras el Marco. Cuando esté publicado, podrás encontrar aquí el enlace para escucharlo."
-                   data-en="The first episode of Tras el Marco is being prepared. Once it is published, you will find the listening link here.">
-                    Estamos preparando el primer episodio de Tras el Marco. Cuando esté publicado, podrás encontrar aquí el enlace para escucharlo.
+                <p data-es="El primer episodio de Tras el Marco ya está disponible. Escucha la historia del sorprendente robo de una obra de Salvador Dalí."
+                   data-en="The first episode of Tras el Marco is now available. Listen to the story of the surprising theft of a Salvador Dalí artwork.">
+                    El primer episodio de Tras el Marco ya está disponible. Escucha la historia del sorprendente robo de una obra de Salvador Dalí.
                 </p>
 
-                <span class="podcast-spotify-estado"
-                      data-es="Primer episodio en preparación"
-                      data-en="First episode in preparation">
-                    Primer episodio en preparación
-                </span>
+                <div class="podcast-reproductor">
+                    <iframe
+                        title="Escuchar el primer episodio de Tras el Marco en Spotify"
+                        style="border-radius:12px"
+                        src="https://open.spotify.com/embed/episode/1ghpNzT4L9H5fxpU3CKi8j?utm_source=generator"
+                        width="100%"
+                        height="352"
+                        frameborder="0"
+                        allowfullscreen
+                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                        loading="lazy">
+                    </iframe>
+                </div>
+
+                <a class="podcast-spotify-estado"
+                   href="https://open.spotify.com/episode/1ghpNzT4L9H5fxpU3CKi8j"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   data-es="Abrir episodio en Spotify ↗"
+                   data-en="Open episode on Spotify ↗">
+                    Abrir episodio en Spotify ↗
+                </a>
 
             </div>
         </section>
@@ -566,7 +657,6 @@
     </main>
 
     <footer class="pie-pagina">
-
         <div class="pie-contenido">
 
             <div class="pie-identidad">
@@ -592,7 +682,6 @@
         <div class="pie-inferior">
             <span>© 2026 Tras el Marco</span>
         </div>
-
     </footer>
 
 </body>
