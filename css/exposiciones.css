@@ -1,0 +1,211 @@
+   /* EXPOSICIONES: PORTADA */
+
+        .exposiciones-hero {
+            min-height: 70svh;
+            padding: 110px 6%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5f1e9;
+            background:
+                radial-gradient(ellipse at 70% 65%, #46372d, transparent 65%),
+                #171513;
+        }
+
+        .exposiciones-hero-contenido {
+            max-width: 950px;
+        }
+
+        .exposiciones-etiqueta {
+            display: inline-block;
+            color: #b89973;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+
+        .exposiciones-hero h1 {
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(52px, 7vw, 100px);
+            font-weight: 400;
+            line-height: 1.15;
+        }
+
+        .exposiciones-hero p {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #ded5ca;
+            font-size: 18px;
+            line-height: 1.85;
+        }
+
+        .exposiciones-enlace {
+            display: inline-block;
+            margin-top: 40px;
+            padding: 17px 30px;
+            border: 1px solid #b89973;
+            font-size: 14px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .exposiciones-enlace:hover {
+            background: #f5f1e9;
+            color: #171513;
+        }
+
+        /* EXPOSICIONES: PRESENTACIÓN */
+
+        .exposiciones-seccion {
+            padding: 115px 6% 130px;
+            background: #f5f1e9;
+        }
+
+        .exposiciones-introduccion {
+            max-width: 850px;
+            margin: 0 auto 75px;
+            text-align: center;
+        }
+
+        .exposiciones-introduccion h2 {
+            margin: 25px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(40px, 5vw, 70px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .exposiciones-introduccion > p {
+            color: #665b52;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        /* BLOQUES EDITORIALES */
+
+        .exposiciones-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+        }
+
+        .exposicion-tarjeta {
+            min-height: 360px;
+            padding: 45px 35px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #e5dacd;
+            background: #fffdfa;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .exposicion-tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 22px 55px #17151315;
+        }
+
+        .exposicion-numero {
+            color: #94704e;
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+
+        .exposicion-tarjeta h3 {
+            margin: 30px 0 18px;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(30px, 3vw, 42px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .exposicion-tarjeta p {
+            color: #665b52;
+            font-size: 15px;
+            line-height: 1.85;
+        }
+
+        .exposicion-estado {
+            margin-top: 30px;
+            color: #80664d;
+            font-size: 13px;
+        }
+
+        /* CIERRE */
+
+        .exposiciones-cierre {
+            min-height: 52svh;
+            padding: 100px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #f5f1e9;
+            background:
+                radial-gradient(ellipse at center, #403027, transparent 70%),
+                #171513;
+        }
+
+        .exposiciones-cierre-contenido {
+            max-width: 850px;
+        }
+
+        .exposiciones-cierre h2 {
+            margin: 30px 0;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(42px, 6vw, 78px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .exposiciones-cierre p {
+            color: #ded5ca;
+            font-size: 17px;
+            line-height: 1.85;
+        }
+
+        @media (max-width: 950px) {
+            .exposiciones-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .exposiciones-hero {
+                min-height: 65svh;
+                padding: 85px 20px;
+            }
+
+            .exposiciones-hero h1 {
+                font-size: clamp(46px, 11vw, 68px);
+            }
+
+            .exposiciones-hero p {
+                font-size: 16px;
+            }
+
+            .exposiciones-seccion {
+                padding: 80px 20px 90px;
+            }
+
+            .exposiciones-introduccion {
+                margin-bottom: 45px;
+            }
+
+            .exposiciones-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .exposicion-tarjeta {
+                min-height: 300px;
+                padding: 35px 28px;
+            }
+
+            .exposiciones-cierre {
+                padding: 90px 20px;
+            }
+        }
