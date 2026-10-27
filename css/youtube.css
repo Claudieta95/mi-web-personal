@@ -125,6 +125,7 @@
             font-family: 'Playfair Display', serif;
             font-size: clamp(30px, 4vw, 52px);
             font-weight: 400;
+            text-wrap: balance;
         }
 
         .youtube-pantalla-pie {
