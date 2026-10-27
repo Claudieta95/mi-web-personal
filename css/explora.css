@@ -1,0 +1,236 @@
+/* EXPLORA: PRESENTACIÓN */
+
+.explora-hero {
+    min-height: 66svh;
+    padding: 100px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--crema);
+    background:
+        radial-gradient(ellipse at 70% 70%, #46372d, transparent 65%),
+        var(--oscuro);
+}
+
+.explora-hero-contenido {
+    max-width: 950px;
+    animation: aparecer 1.2s ease both;
+}
+
+.explora-hero h1 {
+    margin: 30px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(56px, 8vw, 110px);
+    font-weight: 400;
+    line-height: 1.15;
+}
+
+.explora-hero-contenido > p:not(.seccion-etiqueta) {
+    max-width: 690px;
+    margin: 0 auto;
+    color: #ded5ca;
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* EXPLORA: CATEGORÍAS */
+
+.explora-categorias {
+    padding: 110px 6% 130px;
+    background: var(--crema);
+}
+
+.explora-introduccion {
+    max-width: 800px;
+    margin: 0 auto 75px;
+    text-align: center;
+}
+
+.explora-introduccion .seccion-etiqueta {
+    color: #9b7655;
+}
+
+.explora-introduccion h2 {
+    margin: 24px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 66px);
+    font-weight: 400;
+}
+
+.explora-introduccion > p:last-child {
+    color: #665b52;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.explora-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 45px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.explora-tarjeta {
+    min-width: 0;
+    background: #fffdfa;
+    border: 1px solid #e5dacd;
+    overflow: hidden;
+    transition: box-shadow 0.4s ease;
+}
+
+.explora-tarjeta:hover {
+    box-shadow: 0 22px 55px #17151318;
+}
+
+.explora-imagen {
+    height: 350px;
+    overflow: hidden;
+    background: #d9cabb;
+}
+
+.explora-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.explora-tarjeta:hover .explora-imagen img {
+    transform: scale(1.05);
+}
+
+.explora-tarjeta-contenido {
+    padding: 35px;
+}
+
+.explora-indice {
+    display: block;
+    margin-bottom: 16px;
+    color: #9b7655;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.explora-tarjeta h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3vw, 39px);
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+.explora-tarjeta-contenido > p:not(.explora-obra) {
+    margin-top: 18px;
+    color: #625950;
+    font-size: 15px;
+    line-height: 1.85;
+}
+
+.explora-obra {
+    margin-top: 26px;
+    color: #80664d;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.explora-fuente {
+    display: inline-block;
+    margin-top: 12px;
+    color: #80664d;
+    font-size: 12px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.explora-fuente:hover {
+    color: var(--oscuro);
+}
+
+/* EXPLORA: CIERRE */
+
+.explora-cierre {
+    min-height: 55svh;
+    padding: 100px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--crema);
+    background:
+        radial-gradient(ellipse at center, #403027, transparent 70%),
+        var(--oscuro);
+}
+
+.explora-cierre > div {
+    max-width: 800px;
+}
+
+.explora-cierre h2 {
+    margin: 30px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 6vw, 76px);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.explora-cierre p:last-child {
+    color: #ded5ca;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* EXPLORA: TABLET */
+
+@media (max-width: 1000px) {
+    .explora-grid {
+        gap: 25px;
+    }
+
+    .explora-imagen {
+        height: 280px;
+    }
+}
+
+/* EXPLORA: MÓVIL */
+
+@media (max-width: 600px) {
+    .explora-hero {
+        min-height: 65svh;
+        padding: 80px 20px;
+    }
+
+    .explora-hero h1 {
+        font-size: clamp(48px, 12vw, 72px);
+    }
+
+    .explora-hero-contenido > p:not(.seccion-etiqueta) {
+        font-size: 16px;
+    }
+
+    .explora-categorias {
+        padding: 80px 20px;
+    }
+
+    .explora-introduccion {
+        margin-bottom: 45px;
+    }
+
+    .explora-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .explora-imagen {
+        height: 280px;
+    }
+
+    .explora-tarjeta-contenido {
+        padding: 26px;
+    }
+
+    .explora-cierre {
+        padding: 90px 20px;
+    }
+}
