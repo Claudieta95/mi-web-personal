@@ -282,8 +282,9 @@
             display: block;
             width: 100%;
             border: 0;
+            border-radius: 12px;
         }
-
+        
         .podcast-spotify-estado {
             display: inline-block;
             margin-top: 35px;
